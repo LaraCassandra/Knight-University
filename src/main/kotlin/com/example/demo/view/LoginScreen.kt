@@ -19,7 +19,9 @@ class LoginScreen : View("Hello TornadoFX") {
     init {
         with(root) {
 
-            image
+//            label {
+//                graphic = imageview("knight-logo.png", lazyload = false)
+//            }
 
             fieldset {
                 labelPosition = Orientation.VERTICAL

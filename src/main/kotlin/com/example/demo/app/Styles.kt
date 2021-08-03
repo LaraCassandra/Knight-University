@@ -1,12 +1,12 @@
 package com.example.demo.app
 
-import javafx.scene.paint.Color
+
 import javafx.scene.text.FontWeight
 import tornadofx.Stylesheet
+import tornadofx.WizardStyles.Companion.graphic
 import tornadofx.box
 import tornadofx.cssclass
 import tornadofx.px
-import java.awt.Color.blue
 
 class Styles : Stylesheet() {
     companion object {
@@ -23,6 +23,10 @@ class Styles : Stylesheet() {
             button {
                 prefWidth = 200.px
             }
+//            imageView {
+//                prefWidth = 50.px
+//                prefHeight = 50.px
+//            }
         }
     }
 }
