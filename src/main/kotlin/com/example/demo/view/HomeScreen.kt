@@ -2,11 +2,9 @@ package com.example.demo.view
 
 import com.example.demo.app.Styles
 import com.example.demo.controller.HomeController
-import com.example.demo.model.User
 import com.example.demo.model.UserModel
 import javafx.geometry.Pos
 import tornadofx.*
-import java.awt.Color
 
 class HomeScreen: View("Knight University Home") {
     val homeController: HomeController by inject()
@@ -35,10 +33,66 @@ class HomeScreen: View("Knight University Home") {
             }
 
             // CENTER
-            center = vbox {
+            right = gridpane {
+                alignment = Pos.CENTER
 
-                button("REFRESH")
-                button("COMMIT")
+                row {
+
+                    button("Staff"){
+                        useMaxWidth = true
+                        prefHeight = 120.0
+                        gridpaneConstraints {
+                            marginBottom = 10.0
+                            marginTop = 10.0
+                            marginLeft = 10.0
+                            marginRight = 10.0
+                            columnSpan = 1
+                        }
+                    }
+
+                    button("Students"){
+                        useMaxWidth = true
+                        prefHeight = 120.0
+                        gridpaneConstraints {
+                            marginBottom = 10.0
+                            marginTop = 10.0
+                            marginLeft = 10.0
+                            marginRight = 10.0
+                            columnSpan = 1
+                        }
+                        action {
+                            replaceWith<StudentList>()
+                        }
+                    }
+                }
+
+                row {
+
+                    button("Subjects"){
+                        useMaxWidth = true
+                        prefHeight = 120.0
+                        gridpaneConstraints {
+                            marginBottom = 10.0
+                            marginTop = 10.0
+                            marginLeft = 10.0
+                            marginRight = 10.0
+                            columnSpan = 1
+                        }
+                    }
+
+                    button("Fees"){
+                        useMaxWidth = true
+                        prefHeight = 120.0
+                        gridpaneConstraints {
+                            marginBottom = 10.0
+                            marginTop = 10.0
+                            marginLeft = 10.0
+                            marginRight = 10.0
+                            columnSpan = 1
+                        }
+                    }
+
+                }
 
             }
 

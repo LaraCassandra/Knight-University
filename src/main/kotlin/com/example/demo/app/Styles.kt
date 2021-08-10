@@ -11,6 +11,7 @@ class Styles : Stylesheet() {
         val loginWidth = 100.px
 
         val home by cssclass()
+//        val homeButtons by cssclass()
 
         private val redColor = c("#FA6565")
         private val whiteColor = c("#FFFFFF")
@@ -41,6 +42,7 @@ class Styles : Stylesheet() {
             fontSize = 15.px
             backgroundColor += redColor
             textFill = whiteColor
+            fontWeight = FontWeight.BOLD
 
         }
 
@@ -48,7 +50,20 @@ class Styles : Stylesheet() {
             backgroundColor += whiteColor
             spacing = 20.px
             padding = box(100.px)
+            fontSize = 15.px
+            fontWeight = FontWeight.MEDIUM
         }
+
+//        homeButtons {
+//            button {
+//                prefWidth = 150.px
+//                prefHeight = 150.px
+//                fontSize = 15.px
+//                backgroundColor += whiteColor
+//                textFill = redColor
+//                borderColor += box(redColor)
+//            }
+//        }
 
     }
 }
