@@ -15,27 +15,27 @@ class StudentEditor: View() {
             fieldset {
 
                 field ("Full Name"){
-                    textfield()
+                    textfield(model.fullName)
                 }
 
                 field ("ID Number"){
-                    textfield()
+                    textfield(model.idNumber)
                 }
 
                 field ("Credits"){
-                    textfield()
+                    textfield(model.credits)
                 }
 
                 field ("Subjects"){
-                    textfield()
+                    textfield(model.subjects)
                 }
 
-                field ("Fees"){
-                    textfield()
+                field ("Funds"){
+                    textfield(model.fees)
                 }
 
                 field ("Student Type"){
-                    textfield()
+                    textfield(model.eduType)
                 }
 
             }

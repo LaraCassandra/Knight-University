@@ -45,13 +45,6 @@ class Styles : Stylesheet() {
             alignment = Pos.CENTER
             fontSize = 15.px
             backgroundColor += whiteColor
-            button {
-                prefWidth = 120.px
-                borderColor += box(redColor, redColor, redColor, redColor)
-                fontSize = 15.px
-                backgroundColor += redColor
-                textFill = whiteColor
-            }
         }
 
         button {

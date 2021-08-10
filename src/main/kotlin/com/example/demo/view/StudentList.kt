@@ -14,8 +14,13 @@ class StudentList: View("Knight University - Students") {
         column("ID Number", Student::idNumberProperty)
         column("Credits", Student::creditsProperty)
         column("Subjects", Student::subjectsProperty)
-        column("Fees", Student::feesProperty)
-        column("Degree / Diploma", Student::eduTypeProperty)
+        column("Funds", Student::feesProperty)
+        column("Type", Student::eduTypeProperty)
+
+        columnResizePolicy = SmartResize.POLICY
+
+        bindSelected(model)
+
     }
 
 //    override val root = datagrid(studentListController.students) {
