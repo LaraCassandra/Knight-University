@@ -10,6 +10,8 @@ class Styles : Stylesheet() {
         val login by cssclass()
         val loginWidth = 100.px
 
+        val editor by cssclass()
+
         val home by cssclass()
 //        val homeButtons by cssclass()
 
@@ -24,6 +26,22 @@ class Styles : Stylesheet() {
             fontSize = 18.px
             fontWeight = FontWeight.BOLD
             prefWidth = loginWidth
+            alignment = Pos.CENTER
+            fontSize = 15.px
+            backgroundColor += whiteColor
+            button {
+                prefWidth = 120.px
+                borderColor += box(redColor, redColor, redColor, redColor)
+                fontSize = 15.px
+                backgroundColor += redColor
+                textFill = whiteColor
+            }
+        }
+
+        editor {
+            padding = box(50.px)
+            fontSize = 18.px
+            fontWeight = FontWeight.BOLD
             alignment = Pos.CENTER
             fontSize = 15.px
             backgroundColor += whiteColor

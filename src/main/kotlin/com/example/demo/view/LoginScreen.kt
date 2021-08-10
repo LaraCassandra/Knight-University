@@ -18,7 +18,7 @@ class LoginScreen : View("Knight University") {
     init {
         with(root) {
 
-            imageview("knight-logo-2.png", lazyload = false)
+            imageview("knight-logo-3.png", lazyload = false)
 
             fieldset {
                 labelPosition = Orientation.VERTICAL

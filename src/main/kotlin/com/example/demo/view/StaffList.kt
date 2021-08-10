@@ -9,7 +9,7 @@ import tornadofx.View
 import tornadofx.column
 import tornadofx.tableview
 
-class StaffList: View("Knight University - Students") {
+class StaffList: View("Knight University - Staff") {
     val staffListController: StaffListController by inject()
     val model: StaffModel by inject()
 

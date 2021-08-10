@@ -64,7 +64,7 @@ class HomeScreen: View("Knight University Home") {
                             columnSpan = 1
                         }
                         action {
-                            find(StudentList::class).openWindow()
+                            find(StudentView::class).openWindow()
                         }
                     }
                 }
@@ -80,6 +80,9 @@ class HomeScreen: View("Knight University Home") {
                             marginLeft = 10.0
                             marginRight = 10.0
                             columnSpan = 1
+                        }
+                        action {
+                            find(SubjectList::class).openWindow()
                         }
                     }
 

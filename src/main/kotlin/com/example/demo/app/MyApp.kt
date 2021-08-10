@@ -9,7 +9,7 @@ class MyApp: App(HomeScreen::class, Styles::class) {
     override fun start(stage: Stage) {
         with(stage) {
             width = 900.0
-            height = 900.0
+            height = 700.0
         }
         super.start(stage)
     }
