@@ -6,9 +6,7 @@ import com.example.demo.model.Student
 import com.example.demo.model.StudentModel
 import com.example.demo.model.Subject
 import com.example.demo.model.SubjectModel
-import tornadofx.View
-import tornadofx.column
-import tornadofx.tableview
+import tornadofx.*
 
 class SubjectList: View("Knight University - Subjects") {
     val subjectListController: SubjectListController by inject()
@@ -22,6 +20,10 @@ class SubjectList: View("Knight University - Subjects") {
         column("Hours", Subject::hoursProperty)
         column("Price", Subject::priceProperty)
         column("Students", Subject::studentsProperty)
+
+        columnResizePolicy = SmartResize.POLICY
+
+        bindSelected(model)
     }
 
 }
