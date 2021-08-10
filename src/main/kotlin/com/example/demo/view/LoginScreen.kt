@@ -10,7 +10,7 @@ import javafx.scene.control.Button
 import javafx.scene.image.Image
 import tornadofx.*
 
-class LoginScreen : View("Hello TornadoFX") {
+class LoginScreen : View("Knight University") {
     val loginController: LoginController by inject()
     val model = UserModel(User())
 
@@ -19,9 +19,7 @@ class LoginScreen : View("Hello TornadoFX") {
     init {
         with(root) {
 
-//            label {
-//                graphic = imageview("knight-logo.png", lazyload = false)
-//            }
+//            imageview("knight-logo.png", lazyload = false)
 
             fieldset {
                 labelPosition = Orientation.VERTICAL
@@ -50,7 +48,7 @@ class LoginScreen : View("Hello TornadoFX") {
                 loginController.loginCheck(model.user)
             } ui { success ->
                 if (success){
-                    replaceWith<ProtectedView>()
+                    replaceWith<HomeScreen>()
                 }
                 else {
                     alert(Alert.AlertType.WARNING, "Login Failed", "Please check that your credentials are correct")

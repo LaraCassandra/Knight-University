@@ -1,32 +1,43 @@
 package com.example.demo.app
 
 
+import javafx.geometry.Pos
 import javafx.scene.text.FontWeight
-import tornadofx.Stylesheet
-import tornadofx.WizardStyles.Companion.graphic
-import tornadofx.box
-import tornadofx.cssclass
-import tornadofx.px
+import tornadofx.*
 
 class Styles : Stylesheet() {
     companion object {
         val login by cssclass()
-        val loginWidth = 500.px
+        val loginWidth = 100.px
+
+        val home by cssclass()
+
+        private val redColor = c("#FA6565")
+        private val whiteColor = c("#FFFFFF")
+
     }
 
     init {
         form and login {
-            padding = box(50.px)
+            padding = box(300.px)
             fontSize = 18.px
             fontWeight = FontWeight.BOLD
             prefWidth = loginWidth
+            alignment = Pos.CENTER
+            fontSize = 15.px
+            backgroundColor += whiteColor
             button {
-                prefWidth = 200.px
+                prefWidth = 120.px
+                borderColor += box(redColor, redColor, redColor, redColor)
+                fontSize = 15.px
+                backgroundColor += redColor
+                textFill = whiteColor
             }
-//            imageView {
-//                prefWidth = 50.px
-//                prefHeight = 50.px
-//            }
         }
+
+        home {
+            backgroundColor += whiteColor
+        }
+
     }
 }
