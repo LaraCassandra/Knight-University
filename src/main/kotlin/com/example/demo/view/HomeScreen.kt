@@ -49,7 +49,7 @@ class HomeScreen: View("Knight University Home") {
                             columnSpan = 1
                         }
                         action {
-                            find(StaffList::class).openWindow()
+                            find(StaffView::class).openWindow()
                         }
                     }
 
