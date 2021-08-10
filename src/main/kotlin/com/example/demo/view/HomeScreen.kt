@@ -48,6 +48,9 @@ class HomeScreen: View("Knight University Home") {
                             marginRight = 10.0
                             columnSpan = 1
                         }
+                        action {
+                            find(StaffList::class).openWindow()
+                        }
                     }
 
                     button("Students"){
@@ -61,7 +64,7 @@ class HomeScreen: View("Knight University Home") {
                             columnSpan = 1
                         }
                         action {
-                            replaceWith<StudentList>()
+                            find(StudentList::class).openWindow()
                         }
                     }
                 }

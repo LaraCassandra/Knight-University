@@ -3,9 +3,7 @@ package com.example.demo.view
 import com.example.demo.controller.StudentListController
 import com.example.demo.model.Student
 import com.example.demo.model.StudentModel
-import tornadofx.View
-import tornadofx.column
-import tornadofx.tableview
+import tornadofx.*
 
 class StudentList: View("Knight University - Students") {
     val studentListController: StudentListController by inject()
@@ -19,5 +17,13 @@ class StudentList: View("Knight University - Students") {
         column("Fees", Student::feesProperty)
         column("Degree / Diploma", Student::eduTypeProperty)
     }
+
+//    override val root = datagrid(studentListController.students) {
+//        cellFormat {
+//            graphic = stackpane {
+//                label(Student::fullNameProperty.toString())
+//            }
+//        }
+//    }
 
 }
