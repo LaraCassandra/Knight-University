@@ -1,7 +1,6 @@
 package com.example.demo.controller
 
 import com.example.demo.model.User
-import javafx.beans.property.SimpleStringProperty
 import tornadofx.*
 
 class LoginController: Controller() {

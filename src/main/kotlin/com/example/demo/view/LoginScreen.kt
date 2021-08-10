@@ -7,7 +7,6 @@ import com.example.demo.model.UserModel
 import javafx.geometry.Orientation
 import javafx.scene.control.Alert
 import javafx.scene.control.Button
-import javafx.scene.image.Image
 import tornadofx.*
 
 class LoginScreen : View("Knight University") {
@@ -19,7 +18,7 @@ class LoginScreen : View("Knight University") {
     init {
         with(root) {
 
-//            imageview("knight-logo.png", lazyload = false)
+            imageview("knight-logo-2.png", lazyload = false)
 
             fieldset {
                 labelPosition = Orientation.VERTICAL
@@ -32,7 +31,7 @@ class LoginScreen : View("Knight University") {
                 }
             }
 
-            button("Login Now"){
+            button("Login"){
                 action {
                     login()
                 }

@@ -35,8 +35,19 @@ class Styles : Stylesheet() {
             }
         }
 
+        button {
+            prefWidth = 120.px
+            borderColor += box(redColor, redColor, redColor, redColor)
+            fontSize = 15.px
+            backgroundColor += redColor
+            textFill = whiteColor
+
+        }
+
         home {
             backgroundColor += whiteColor
+            spacing = 20.px
+            padding = box(100.px)
         }
 
     }
