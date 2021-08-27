@@ -5,7 +5,7 @@ import com.example.demo.view.LoginScreen
 import javafx.stage.Stage
 import tornadofx.App
 
-class MyApp: App(HomeScreen::class, Styles::class) {
+class MyApp: App(LoginScreen::class, Styles::class) {
     override fun start(stage: Stage) {
         with(stage) {
             width = 900.0

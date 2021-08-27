@@ -54,6 +54,7 @@ class Styles : Stylesheet() {
             backgroundColor += redColor
             textFill = whiteColor
             fontWeight = FontWeight.BOLD
+            padding = box(5.px)
 
         }
 

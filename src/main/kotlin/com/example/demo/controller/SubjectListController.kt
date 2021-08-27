@@ -16,6 +16,5 @@ class SubjectListController: Controller() {
         subjects.plusAssign(Subject("Smart Objects", "CC", "Emilia Johnson", 20, 8, 1000, "Lara Cook, John Doe"))
         subjects.plusAssign(Subject("Internet of Things", "IOT", "Jay Wilson", 20, 8, 1000, "Lara Cook, Marcus Dean"))
         subjects.plusAssign(Subject("iOS", "IOS", "Victor Brown", 20, 8, 1000, "John Doe"))
-
     }
 }
