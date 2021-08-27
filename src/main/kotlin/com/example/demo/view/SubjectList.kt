@@ -1,29 +1,60 @@
 package com.example.demo.view
 
-import com.example.demo.controller.StudentListController
 import com.example.demo.controller.SubjectListController
-import com.example.demo.model.Student
-import com.example.demo.model.StudentModel
 import com.example.demo.model.Subject
 import com.example.demo.model.SubjectModel
+import javafx.collections.ObservableList
 import tornadofx.*
 
 class SubjectList: View("Knight University - Subjects") {
     val subjectListController: SubjectListController by inject()
-    val model: SubjectModel by inject()
+    var subjectTable : TableViewEditModel<SubjectModel> by singleAssign()
+    var subjects : ObservableList<SubjectModel> by singleAssign()
 
-    override val root = tableview(subjectListController.subjects) {
-        column("Subject Name", Subject::nameProperty)
-        column("Code", Subject::codeProperty)
-        column("Lecturer", Subject::lecturerProperty)
-        column("Credits", Subject::creditsProperty)
-        column("Hours", Subject::hoursProperty)
-        column("Price", Subject::priceProperty)
-        column("Students", Subject::studentsProperty)
+    override val root = borderpane {
+        subjects = subjectListController.subjects
 
-        columnResizePolicy = SmartResize.POLICY
+        left = vbox {
+            button("Delete") {
+                action {
+                    val model = subjectTable.tableView.selectedItem
+                    when (model) {
+                        null -> return@action
+                        else -> subjectListController.deleteSubject(model)
+                    }
+                }
+            }
 
-        bindSelected(model)
+            button("Save Edited"){
+                action {
+                    subjectListController.commitDirty(subjectTable.items.asSequence())
+                }
+            }
+
+            button("Undo All"){
+                action {
+                    subjectTable.rollback()
+                }
+            }
+        }
+
+        center = tableview<SubjectModel> {
+            subjectTable = editModel
+            items = subjects
+
+            enableCellEditing()
+            enableDirtyTracking()
+
+            column("Subject Name", SubjectModel::name).makeEditable()
+            column("Code", SubjectModel::code).makeEditable()
+            column("Lecturer", SubjectModel::lecturer).makeEditable()
+            column("Credits", SubjectModel::credits).makeEditable()
+            column("Hours", SubjectModel::hours).makeEditable()
+            column("Price", SubjectModel::price).makeEditable()
+
+            columnResizePolicy = SmartResize.POLICY
+        }
+
     }
 
 }

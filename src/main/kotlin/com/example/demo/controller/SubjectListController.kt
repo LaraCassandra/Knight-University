@@ -1,20 +1,91 @@
 package com.example.demo.controller
 
-import com.example.demo.model.Student
 import com.example.demo.model.Subject
+import com.example.demo.model.SubjectModel
+import com.example.demo.model.Subjects
 import javafx.collections.FXCollections
+import javafx.collections.ObservableList
+import org.jetbrains.exposed.sql.Database
+import org.jetbrains.exposed.sql.SchemaUtils
+import org.jetbrains.exposed.sql.StdOutSqlLogger
+import org.jetbrains.exposed.sql.addLogger
+import org.jetbrains.exposed.sql.transactions.TransactionManager
+import org.jetbrains.exposed.sql.transactions.transaction
 import tornadofx.Controller
+import tornadofx.*
+import java.sql.Connection
 
 class SubjectListController: Controller() {
-    val subjects = FXCollections.observableArrayList<Subject>()
+    val subjects: ObservableList<SubjectModel> by lazy {
+        transaction {
+            Subject.all().map {
+                SubjectModel().apply {
+                    item = it
+                }
+            }.observable()
+        }
+    }
 
     init {
-        subjects.plusAssign(Subject("Interactive Development", "IDV", "Nelly Lavigne", 20, 16, 1200, "Lara Cook, John Doe, Marcus Dean"))
-        subjects.plusAssign(Subject("Research Practice", "RP", "Nelly Lavigne", 20, 4, 1000, "Lara Cook, John Doe, Jane Smith, Marcus Dean"))
-        subjects.plusAssign(Subject("Visual Culture", "VC", "Jesse Edwards", 20, 8, 1200, "Lara Cook, John Doe, Jane Smith, Marcus Dean"))
-        subjects.plusAssign(Subject("Interaction Theory", "IXT", "Jesse Edwards", 20, 4, 1000, "Lara Cook, Jane Doe, Jane Smith, Marcus Dean"))
-        subjects.plusAssign(Subject("Smart Objects", "CC", "Emilia Johnson", 20, 8, 1000, "Lara Cook, John Doe"))
-        subjects.plusAssign(Subject("Internet of Things", "IOT", "Jay Wilson", 20, 8, 1000, "Lara Cook, Marcus Dean"))
-        subjects.plusAssign(Subject("iOS", "IOS", "Victor Brown", 20, 8, 1000, "John Doe"))
+        Database.connect("jdbc:sqlite:file:data:sqlite", driver = "org.sqlite.JDBC")
+        TransactionManager.manager.defaultIsolationLevel = Connection.TRANSACTION_SERIALIZABLE
     }
+
+    fun setUp() {
+        Database.connect("jdbc:sqlite:file:data:sqlite", driver = "org.sqlite.JDBC")
+        TransactionManager.manager.defaultIsolationLevel = Connection.TRANSACTION_SERIALIZABLE
+
+        transaction {
+            addLogger(StdOutSqlLogger)
+            SchemaUtils.create(Subjects)
+
+            Subject.new{
+                name = "Interactive Development 300"
+                code = "IDV300"
+                lecturer = "John Doe"
+                credits = 40
+                hours = "16"
+                price = 11000
+            }
+        }
+
+        transaction {
+            Subject.all().forEach { println(it) }
+        }
+    }
+
+    fun deleteSubject(model: SubjectModel){
+        transaction {
+            model.item.delete()
+        }
+        subjects.remove(model)
+    }
+
+    fun addSubject(name: String, code: String, lecturer: String, credits: Int, hours: String, price: Int){
+        transaction {
+            val subject = Subject.new {
+                this.name = name
+                this.code = code
+                this.lecturer = lecturer
+                this.credits = credits
+                this.hours = hours
+                this.price = price
+            }
+            subjects.add(
+                    SubjectModel().apply {
+                        item = subject
+                    }
+            )
+        }
+    }
+
+    fun commitDirty(modelDirtyMappings: Sequence<Map.Entry<SubjectModel, TableColumnDirtyState<SubjectModel>>>) {
+        transaction {
+            modelDirtyMappings.filter{it.value.isDirty}.forEach {
+                it.key.commit()
+                it.value.commit()
+            }
+        }
+    }
+
 }

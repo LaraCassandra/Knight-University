@@ -4,6 +4,7 @@ import com.example.demo.app.Styles
 import com.example.demo.controller.LoginController
 import com.example.demo.controller.StaffListController
 import com.example.demo.controller.StudentListController
+import com.example.demo.controller.SubjectListController
 import com.example.demo.model.User
 import com.example.demo.model.UserModel
 import javafx.geometry.Orientation
@@ -13,7 +14,7 @@ import tornadofx.*
 
 class LoginScreen : View("Knight University") {
     val loginController: LoginController by inject()
-    val staffListController: StaffListController by inject()
+    val subjectListController: SubjectListController by inject()
     val model = UserModel(User())
 
     override val root = Form().addClass(Styles.login)
@@ -45,7 +46,7 @@ class LoginScreen : View("Knight University") {
 
     private fun Button.login(){
 //
-//        staffListController.setUp()
+//        subjectListController.setUp()
 
         if(model.commit()){
             runAsync {

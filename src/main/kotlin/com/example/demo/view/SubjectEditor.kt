@@ -1,11 +1,19 @@
 package com.example.demo.view
 
 import com.example.demo.app.Styles
+import com.example.demo.controller.SubjectListController
 import com.example.demo.model.SubjectModel
+import javafx.scene.control.TextField
 import tornadofx.*
 
 class SubjectEditor: View() {
-    val model: SubjectModel by inject()
+    val subjectListController : SubjectListController by inject()
+    var nameField : TextField by singleAssign()
+    var codeField : TextField by singleAssign()
+    var lecturerField : TextField by singleAssign()
+    var hoursField : TextField by singleAssign()
+    var priceField : TextField by singleAssign()
+    var creditsField : TextField by singleAssign()
 
     override val root = Form().addClass(Styles.editor)
 
@@ -15,38 +23,52 @@ class SubjectEditor: View() {
             fieldset {
 
                 field ("Subject Name"){
-                    textfield(model.name)
+                    textfield{
+                        nameField = this
+                    }
                 }
 
                 field ("Code"){
-                    textfield(model.code)
+                    textfield {
+                        codeField = this
+                    }
                 }
 
                 field ("Lecturer"){
-                    textfield(model.lecturer)
+                    textfield{
+                        lecturerField = this
+                    }
                 }
 
                 field ("Credits"){
-                    textfield(model.credits)
+                    textfield{
+                        creditsField = this
+                    }
                 }
 
                 field ("Hours"){
-                    textfield(model.hours)
+                    textfield{
+                        hoursField = this
+                    }
                 }
 
                 field ("Price"){
-                    textfield(model.price)
-                }
-
-                field ("Students"){
-                    textfield(model.students)
+                    textfield{
+                        priceField = this
+                    }
                 }
 
             }
 
-            button("Save"){
+            button("Add Subject"){
                 action {
-                    model.commit()
+                    subjectListController.addSubject(nameField.text, codeField.text, lecturerField.text, creditsField.text.toInt(), hoursField.text, priceField.text.toInt())
+                    nameField.text = ""
+                    codeField.text = ""
+                    lecturerField.text = ""
+                    creditsField.text = ""
+                    hoursField.text = ""
+                    priceField.text = ""
                 }
             }
         }

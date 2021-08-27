@@ -53,7 +53,7 @@ class StaffEditor: View() {
 
             }
 
-            button("Save"){
+            button("Add Staff"){
                 action {
                     staffListController.addStaff(fullNameField.text, idNumberField.text, hoursField.text, salaryField.text.toInt(), staffTypeField.text)
                     fullNameField.text = ""

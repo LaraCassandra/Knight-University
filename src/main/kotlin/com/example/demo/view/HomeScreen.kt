@@ -86,17 +86,17 @@ class HomeScreen: View("Knight University Home") {
                         }
                     }
 
-                    button("Fees"){
-                        useMaxWidth = true
-                        prefHeight = 120.0
-                        gridpaneConstraints {
-                            marginBottom = 10.0
-                            marginTop = 10.0
-                            marginLeft = 10.0
-                            marginRight = 10.0
-                            columnSpan = 1
-                        }
-                    }
+//                    button("Fees"){
+//                        useMaxWidth = true
+//                        prefHeight = 120.0
+//                        gridpaneConstraints {
+//                            marginBottom = 10.0
+//                            marginTop = 10.0
+//                            marginLeft = 10.0
+//                            marginRight = 10.0
+//                            columnSpan = 1
+//                        }
+//                    }
 
                 }
 
