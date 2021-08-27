@@ -2,6 +2,7 @@ package com.example.demo.view
 
 import com.example.demo.app.Styles
 import com.example.demo.controller.LoginController
+import com.example.demo.controller.StaffListController
 import com.example.demo.controller.StudentListController
 import com.example.demo.model.User
 import com.example.demo.model.UserModel
@@ -12,7 +13,7 @@ import tornadofx.*
 
 class LoginScreen : View("Knight University") {
     val loginController: LoginController by inject()
-    val studentListController: StudentListController by inject()
+    val staffListController: StaffListController by inject()
     val model = UserModel(User())
 
     override val root = Form().addClass(Styles.login)
@@ -44,7 +45,7 @@ class LoginScreen : View("Knight University") {
 
     private fun Button.login(){
 //
-//        studentListController.setUp()
+//        staffListController.setUp()
 
         if(model.commit()){
             runAsync {

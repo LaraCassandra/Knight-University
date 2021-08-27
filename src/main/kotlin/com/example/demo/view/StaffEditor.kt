@@ -1,11 +1,18 @@
 package com.example.demo.view
 
 import com.example.demo.app.Styles
+import com.example.demo.controller.StaffListController
 import com.example.demo.model.StaffModel
+import javafx.scene.control.TextField
 import tornadofx.*
 
 class StaffEditor: View() {
-    val model: StaffModel by inject()
+    val staffListController : StaffListController by inject()
+    var fullNameField : TextField by singleAssign()
+    var idNumberField : TextField by singleAssign()
+    var hoursField : TextField by singleAssign()
+    var salaryField : TextField by singleAssign()
+    var staffTypeField : TextField by singleAssign()
 
     override val root = Form().addClass(Styles.editor)
 
@@ -15,34 +22,42 @@ class StaffEditor: View() {
             fieldset {
 
                 field ("Full Name"){
-                    textfield(model.fullName)
+                    textfield{
+                        fullNameField = this
+                    }
                 }
 
                 field ("ID Number"){
-                    textfield(model.idNumber)
+                    textfield{
+                        idNumberField = this
+                    }
                 }
 
-                field ("Type"){
-                    textfield(model.eduType)
-                }
-
-                field("Subjects"){
-                    textfield(model.subjects)
-                }
-
-                field("Hours"){
-                    textfield(model.hours)
+                field ("Hours (if applicable)"){
+                    textfield{
+                        hoursField = this
+                    }
                 }
 
                 field("Salary"){
-                    textfield(model.salary)
+                    textfield{
+                        salaryField = this
+                    }
+                }
+
+                field("Staff Type"){
+                    textfield{
+                        staffTypeField = this
+                    }
                 }
 
             }
 
             button("Save"){
                 action {
-                    model.commit()
+                    staffListController.addStaff(fullNameField.text, idNumberField.text, hoursField.text, salaryField.text.toInt(), staffTypeField.text)
+                    fullNameField.text = ""
+                    idNumberField.text = ""
                 }
             }
 
