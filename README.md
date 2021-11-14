@@ -1,4 +1,4 @@
-<!-- REPLACE ALL THE [USERNAME] TEXT WITH YOUR GITHUB PROFILE NAME & THE [PROJECTNAME] WITH THE NAME OF YOUR GITHUB PROJECT -->
+<!-- REPLACE ALL THE [laracassandra] TEXT WITH YOUR GITHUB PROFILE NAME & THE [knight-university] WITH THE NAME OF YOUR GITHUB PROJECT -->
 
 <!-- Repository Information & Links-->
 <br />
@@ -8,32 +8,32 @@
 ![GitHub language count](https://img.shields.io/github/languages/count/LaraCassandra/knight-university?color=%23FB6566&style=flat-square)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/LaraCassandra/knight-university?color=%23FB6566&style=flat-square)
 [![LinkedIn][linkedin-shield]][linkedin-url]
-[![Instagram][instagram-shield]][instagram-url]
-[![Behance][behance-shield]][behance-url]
+<!-- [![Instagram][instagram-shield]][instagram-url]
+[![Behance][behance-shield]][behance-url] -->
 
 <!-- HEADER SECTION -->
-<h5 align="center" style="padding:0;margin:0;">Your Name & Surname</h5>
-<h5 align="center" style="padding:0;margin:0;">Student Number</h5>
-<h6 align="center">Subject Name & Year</h6>
+<h5 align="center" style="padding:0;margin:0;">Lara Cook</h5>
+<h5 align="center" style="padding:0;margin:0;">190218</h5>
+<h6 align="center">IDV303</h6>
 </br>
 <p align="center">
 
-  <a href="https://github.com/username/projectname">
-    <img src="path/to/logo" alt="Logo" width="140" height="140">
+  <a href="https://github.com/laracassandra/knight-university">
+    <img src="Images/logo.png" alt="Logo" width="140" height="140">
   </a>
   
-  <h3 align="center">Project Name</h3>
+  <h3 align="center">Knight University Administration</h3>
 
   <p align="center">
-    Short Project Slogan / Description <br>
-      <a href="https://github.com/username/projectname"><strong>Explore the docs »</strong></a>
+    Desktop administration application for Knight University<br>
+      <a href="https://github.com/laracassandra/knight-university"><strong>Explore the docs »</strong></a>
    <br />
    <br />
    <a href="path/to/demonstration/video">View Demo</a>
     ·
-    <a href="https://github.com/username/projectname/issues">Report Bug</a>
+    <a href="https://github.com/laracassandra/knight-university/issues">Report Bug</a>
     ·
-    <a href="https://github.com/username/projectname/issues">Request Feature</a>
+    <a href="https://github.com/laracassandra/knight-university/issues">Request Feature</a>
 </p>
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
@@ -47,20 +47,17 @@
   - [How to install](#how-to-install)
   - [Installation](#installation)
 - [Features and Functionality](#features-and-functionality)
-  - [Feature 1](#feature-1)
+  - [Dashboard Design](#dashboard-design)
   - [Feature 2](#feature-2)
-  - [Feature 3](#feature-3)
+  - [Feature 2](#feature-2-1)
 - [Concept Process](#concept-process)
   - [Ideation](#ideation)
   - [Wireframes](#wireframes)
-  - [User-flow](#user-flow)
+  - [Entity Relationship Diagram](#entity-relationship-diagram)
 - [Development Process](#development-process)
   - [Implementation Process](#implementation-process)
     - [Highlights](#highlights)
     - [Challenges](#challenges)
-  - [Reviews & Testing](#reviews--testing)
-    - [Feedback from Reviews](#feedback-from-reviews)
-    - [Unit Tests](#unit-tests)
   - [Future Implementation](#future-implementation)
 - [Final Outcome](#final-outcome)
   - [Mockups](#mockups)
@@ -79,13 +76,14 @@
 
 ### Project Description
 
-A nice introduction to this amazing project of mine.
+Knight University's system became to large to manage and needed to move their administration system to an computer program to help them manage the system. Through this, Knight University Administration was born.
 
 ### Built With
 
-* [Technology Name](path/to/technology/website)
-* [Technology Name](path/to/technology/website)
-* [Technology Name](path/to/technology/website)
+* [Kotlin](https://kotlinlang.org/)
+* [TornadoFX](https://tornadofx.io/)
+* [InteliiJ IDEA](https://www.jetbrains.com/idea/)
+* [Github](https://github.com/)
 
 <!-- GETTING STARTED -->
 <!-- Make sure to add appropriate information about what prerequesite technologies the user would need and also the steps to install your project on their own mashines -->
@@ -95,7 +93,7 @@ The following instructions will get you a copy of the project up and running on 
 
 ### Prerequisites
 
-Ensure that you have the latest version of [Software](path/to/where/they/can/download/software) installed on your machine. The [Plugin](path/to/where/they/can/download/plugin) plugin will also be required.
+Ensure that you have the latest version of [IntelliJ Idea Community Version](https://www.jetbrains.com/idea/download/#section=windows) installed on your machine. The [Kotlin](https://plugins.jetbrains.com/plugin/6954-kotlin) plugin will also be required.
 
 ### How to install
 
@@ -103,36 +101,24 @@ Ensure that you have the latest version of [Software](path/to/where/they/can/dow
 Here are a couple of ways to clone this repo:
 
 1. Software </br>
-`Android Studio` -> `File` -> `New` -> `From Version Control` -> `Git`</br>
-Enter `https://github.com/username/projectname.git` into the URL field and press the `Clone` button.
+`IntelliJ Idea` -> `File` -> `New` -> `From Version Control`</br>
+Enter `https://github.com/laracassandra/knight-university.git` into the URL field and press the `Clone` button.
 
-2. Clone Repository </br>
+1. Clone Repository </br>
 Run the following in the command-line to clone the project:
    ```sh
-   git clone https://github.com/username/projectname.git
+   git clone https://github.com/laracassandra/knight-university.git
    ```
-    Open `Software` and select `File | Open...` from the menu. Select cloned directory and press `Open` button
-
-3. Install Dependencies </br>
-Run the following in the command-line to install all the required dependencies:
-   ```sh
-   npm install
-   ```
-
-4. Get a free API Key at [https://example.com](https://example.com) and enter it in the `config.js` file:
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
-
+    Open `IntelliJ Idea` and select `File | Open...` from the menu. Select cloned directory
 
 <!-- FEATURES AND FUNCTIONALITY-->
 <!-- You can add the links to all of your imagery at the bottom of the file as references -->
 ## Features and Functionality
 
 ![image2][image2]
-### Feature 1
+### Dashboard Design
 
-Description of Feature
+Simplistic, dashboard to 
 
 ![image3][image3]
 ### Feature 2
@@ -140,12 +126,9 @@ Description of Feature
 Description of Feature
 
 ![image4][image4]
-### Feature 3
+### Feature 2
 
 Description of Feature
-
-![image5][image5]
-
 
 <!-- CONCEPT PROCESS -->
 <!-- Briefly explain your concept ideation process -->
@@ -157,15 +140,14 @@ The `Conceptual Process` is the set of actions, activities and research that was
 
 ![image5][image5]
 <br>
-![image6][image6]
 
 ### Wireframes
 
+![image6][image6]
+
+### Entity Relationship Diagram
+
 ![image7][image7]
-
-### User-flow
-
-![image8][image8]
 
 <!-- DEVELOPMENT PROCESS -->
 ## Development Process
@@ -190,23 +172,6 @@ The `Development Process` is the technical implementations and functionality don
 * Bugs.
 * Bugs.
 
-### Reviews & Testing
-<!-- stipulate how you've conducted testing in the form of peer reviews, feedback and also functionality testing, like unit tests (if applicable) -->
-
-#### Feedback from Reviews
-
-`Peer Reviews` were conducted by my fellow students and lecturer. The following feedback I found useful:
-
-* Feedback one.
-* Feedback two.
-
-#### Unit Tests
-
-`Unit Tests` were conducted to establish working functionality. Here are all the tests that were ran:
-
-* Test 1 of this functionality
-* Test 2 of this functionality
-
 ### Future Implementation
 <!-- stipulate functionality and improvements that can be implemented in the future. -->
 
@@ -218,9 +183,9 @@ The `Development Process` is the technical implementations and functionality don
 
 ### Mockups
 
-![image9][image9]
+![image8][image8]
 <br>
-![image10][image10]
+![image9][image9]
 
 <!-- VIDEO DEMONSTRATION -->
 ### Video Demonstration
@@ -232,7 +197,7 @@ To see a run through of the application, click below:
 <!-- ROADMAP -->
 ## Roadmap
 
-See the [open issues](https://github.com/username/projectname/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/laracassandra/knight-university/issues) for a list of proposed features (and known issues).
 
 <!-- CONTRIBUTING -->
 ## Contributing
@@ -248,7 +213,7 @@ Contributions are what makes the open-source community such an amazing place to 
 <!-- AUTHORS -->
 ## Authors
 
-* **Your Name & Surname** - [username](https://github.com/username)
+* **Lara Cook** - [laracassandra](https://github.com/laracassandra)
 
 <!-- LICENSE -->
 ## License
@@ -258,30 +223,29 @@ Distributed under the MIT License. See `LICENSE` for more information.\
 <!-- LICENSE -->
 ## Contact
 
-* **Your Name & Surname** - [email@address](mailto:email@address) - [@instagram_handle](https://www.instagram.com/instagram_handle/) 
-* **Project Link** - https://github.com/username/projectname
+* **Lara Cook** - [larac.cook@gmail.com](mailto:larac.cook@gmail.com) 
+* **Project Link** - https://github.com/laracassandra/knight-university
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 <!-- all resources that you used and Acknowledgements here -->
-* [Resource Name](path/to/resource)
-* [Resource Name](path/to/resource)
-* [Resource Name](path/to/resource)
-* [Resource Name](path/to/resource)
-* [Resource Name](path/to/resource)
+* Lecturer: Christof Enslin
+* [TornadoFX guide](https://edvin.gitbooks.io/tornadofx-guide/content/)
+* [Kotlin documentation](https://kotlinlang.org/docs/home.html)
+* [Freepik](https://freepik.com/)
+* [FlatIcon](https://flaticon.com/)
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
-[image1]: /path/to/image.png
-[image2]: /path/to/image.png
-[image3]: /path/to/image.png
-[image4]: /path/to/image.png
-[image5]: /path/to/image.png
-[image6]: /path/to/image.png
-[image7]: /path/to/image.png
-[image8]: /path/to/image.png
-[image9]: /path/to/image.png
-[image10]: /path/to/image.png
+[image1]: Images/image-1.png
+[image2]: Images/image-2.png
+[image3]: Images/image-3.png
+[image4]: Images/image-4.png
+[image5]: Images/image-5.png
+[image6]: Images/image-6.png
+[image7]: Images/image-7.png
+[image8]: Images/image-8.png
+[image9]: Images/image-9.png
 
 
 <!-- Refer to https://shields.io/ for more information and options about the shield links at the top of the ReadMe file -->
