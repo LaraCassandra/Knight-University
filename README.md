@@ -47,9 +47,9 @@
   - [How to install](#how-to-install)
   - [Installation](#installation)
 - [Features and Functionality](#features-and-functionality)
-  - [Dashboard Design](#dashboard-design)
-  - [Feature 2](#feature-2)
-  - [Feature 2](#feature-2-1)
+  - [Desktop application with login](#desktop-application-with-login)
+  - [Simplistic dashboard](#simplistic-dashboard)
+  - [Manage students, staff and subjects](#manage-students-staff-and-subjects)
 - [Concept Process](#concept-process)
   - [Ideation](#ideation)
   - [Wireframes](#wireframes)
@@ -116,19 +116,19 @@ Run the following in the command-line to clone the project:
 ## Features and Functionality
 
 ![image2][image2]
-### Dashboard Design
+### Desktop application with login
 
-Simplistic, dashboard to 
+Desktop optimised application with simplistic login for admin staff
 
 ![image3][image3]
-### Feature 2
+### Simplistic dashboard
 
-Description of Feature
+Minimal distraction for a simplistic design and tiles in one place for easy and quick access
 
 ![image4][image4]
-### Feature 2
+### Manage students, staff and subjects
 
-Description of Feature
+Tables generated from the database to display all the staff, students and subjects with management buttons and simple form for adding new objects
 
 <!-- CONCEPT PROCESS -->
 <!-- Briefly explain your concept ideation process -->
@@ -157,26 +157,37 @@ The `Development Process` is the technical implementations and functionality don
 ### Implementation Process
 <!-- stipulate all of the functionality you included in the project -->
 
-* Made use of both `functionality` to implement a specific feature.
-* `MVC/MVVM` design architecture implemented.
-* `Plugin` for this.
-* ETC.
+* `MVC` was used as the design 
+architecture to organise the structure of files of my application.
+* `Object-Oriented Programming`, in conjunction 
+with MVC set the basis of the data 
+structure for my application.
+* A `database` was implemented in 
+my application to store all of the 
+information of subjects, staff and
+students. As well as allow for 
+controls to add, remove or edit items.
 
 #### Highlights
 <!-- stipulated the highlight you experienced with the project -->
-* Sunshine.
-* Rainbows.
+* Understanding more about how a `system` works and operates
+* I was extremely excited to begin learning how 
+`desktop application development` works because
+ we have never had the opportunity until this project.
 
 #### Challenges
 <!-- stipulated the challenges you faced with the project and why you think you faced it or how you think you'll solve it (if not solved) -->
-* Bugs.
-* Bugs.
+* `Styling` in a new coding environment
+* `OOP` is still a concept that is difficult for me to fully 
+grasp, and so this was the main struggle during the 
+development as it dictated how objects were structured.
+* General `burnout` from the year
 
 ### Future Implementation
 <!-- stipulate functionality and improvements that can be implemented in the future. -->
 
-* Future 1.
-* Future 2.
+* Improve styling and layout to be more usable
+* Make the application applicable to more than just one specific administration system
 
 <!-- MOCKUPS -->
 ## Final Outcome
